@@ -1,2 +1,6 @@
+#include "kernel/kernel.h"
+#include "system/free_h.h"
 #include <iostream>
-#include <system/free_h.h>
+int main() {
+     kernel();
+     }
