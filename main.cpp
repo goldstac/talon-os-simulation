@@ -3,4 +3,5 @@
 #include <iostream>
 int main() {
      kernel();
+     return 0;
      }
