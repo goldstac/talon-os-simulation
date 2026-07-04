@@ -1,2 +1,4 @@
 #ifndef whoami_H
-#define
+#define whoami_H
+void whoami();
+#endif
