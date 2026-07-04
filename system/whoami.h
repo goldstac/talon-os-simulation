@@ -1,1 +1,2 @@
-#ifndef
+#ifndef whoami_H
+#define
