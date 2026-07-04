@@ -3,7 +3,7 @@
 #include <fstream>
 
 bool IS_SIMULATION_SILENT = true;
-std::ofstream logFile("logs.txt", std::ios::app);
+std::ofstream logFile("../logs.txt", std::ios::app);
 
 void log(const std::string& message) {
     if (logFile.is_open()) {
