@@ -1,4 +1,4 @@
 #include <iostream>
-void disk_show(){
+void whoami(){
     
 }
