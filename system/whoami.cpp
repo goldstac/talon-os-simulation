@@ -1,4 +1,4 @@
 #include <iostream>
-void disk(){
+void disk_show(){
     
 }
