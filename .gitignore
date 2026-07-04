@@ -1,2 +1,4 @@
 
 system/free-h
+*.exe
+/.vscode
