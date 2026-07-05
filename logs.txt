@@ -1,8 +1,0 @@
-[UEFI] Initializing NVRAM...
-hi
-[DATA] Key: BootOrder, Value: 0001
-[DATA] NVRAM size: 1024 bytes
-[UEFI] Initializing NVRAM...
-hi
-[DATA] Key: BootOrder, Value: 0001
-[DATA] NVRAM size: 1024 bytes
