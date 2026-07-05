@@ -9,10 +9,11 @@ int main() {
     while (true){
     std::cout << "admin@talon ~ #\n";
     std::getline(std::cin,shell);
-    if (shell == "exit" or "shutdown"){
+    if (shell == "exit" || shell == "shutdown"){
      break;
      std::cout << "exiting\n";
 
     }
+    else if
      return 0;
      }
