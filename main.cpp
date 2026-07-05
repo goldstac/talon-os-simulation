@@ -17,6 +17,9 @@ int main() {
     else if (shell == ""){
      continue;
     }
+    else{
+     std::cout << "Command Not Found";
+    }
      return 0;
      }
 }
