@@ -1,5 +1,6 @@
 #include <iostream>
 int nvram(){
         bool secure_boot = false;
-        bool 
+        char boot_entrie[] = "efi/boot/grub.efi";
+        
 }
