@@ -4,6 +4,6 @@
 #include <iostream>
 int main() {
      char shell[50];
-
+    std::cout << "Welcome To Talon Linux";
      return 0;
      }
