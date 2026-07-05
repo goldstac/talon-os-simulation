@@ -11,8 +11,8 @@ int main() {
     std::getline(std::cin,shell);
     if (shell == "exit" or "shutdown"){
      break;
-     std::cout << "exiting"
-    }
+     std::cout << "exiting\n";
+
     }
      return 0;
      }
