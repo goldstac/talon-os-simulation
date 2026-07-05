@@ -6,8 +6,9 @@
 int main() {
     std::string shell;
     std::cout << "Welcome To Talon Linux";
-    while (1){
+    while (true){
     std::cout << "admin@talon ~ #";
+    std::getline(std::cin,shell);
     }
      return 0;
      }
