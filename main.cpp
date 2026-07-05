@@ -4,7 +4,7 @@
 #include "driver_registry.h"
 #include <iostream>
 int main() {
-     char shell[50];
+    std::string shell;
     std::cout << "Welcome To Talon Linux";
     while (1){
     std::cout << "admin@talon ~ #";
