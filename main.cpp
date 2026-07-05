@@ -25,6 +25,7 @@ int main() {
     }
     else if (shell == "free -h") {
      show_memory();
+     continue;
     }
     else{
      std::cout << "Command Not Found\n";
