@@ -19,6 +19,7 @@ int main() {
     }
     else{
      std::cout << "Command Not Found";
+     continue;
     }
      return 0;
      }
