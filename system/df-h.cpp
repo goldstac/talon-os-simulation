@@ -1,4 +1,4 @@
 #include <iostream>
-void disk_usage(){
-    
+void disk_free(){
+    std::cout << "";
 }
