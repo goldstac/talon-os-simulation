@@ -1,4 +1,2 @@
-g++ system/free-h.cpp -o bin/free-h
-chmod +x bin/free-h
-chmod +x bin/kernel
-g++ -o dxe dxe/dxe.cpp
+g++ -c system/free-h.cpp -o bin/free-h.o
+chmod +x bin/free-h.o
