@@ -6,7 +6,7 @@ int main() {
      char shell[50];
     std::cout << "Welcome To Talon Linux";
     while (1){
-     
+    std::cout << "admin@talon ~ #";
     }
      return 0;
      }
