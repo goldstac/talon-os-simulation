@@ -5,5 +5,8 @@
 int main() {
      char shell[50];
     std::cout << "Welcome To Talon Linux";
+    while (1){
+     
+    }
      return 0;
      }
