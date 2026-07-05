@@ -17,6 +17,15 @@ int main() {
     else if (shell == ""){
      continue;
     }
+    else if (shell == "whoami") {
+     std::cout << "admin";
+    }
+    else if (shell == "drivers-list") {
+     std::cout << "";
+    }
+    else if (shell == "free -h") {
+     show_memory();
+    }
     else{
      std::cout << "Command Not Found\n";
      continue;

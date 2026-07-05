@@ -1,3 +1,3 @@
 #!/bin/bash
-g++ -o main.exe main.cpp
+g++ -o main.exe main.cpp system/free-h.cpp
 ./main.exe
