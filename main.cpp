@@ -7,13 +7,16 @@ int main() {
     std::string shell;
     std::cout << "Welcome To Talon Linux\n";
     while (true){
-    std::cout << "admin@talon ~ #\n";
+    std::cout << "admin@talon ~ #";
     std::getline(std::cin,shell);
     if (shell == "exit" || shell == "shutdown"){
      break;
      std::cout << "exiting\n";
 
     }
-    else if
+    else if (shell == ""){
+     continue;
+    }
      return 0;
      }
+}
