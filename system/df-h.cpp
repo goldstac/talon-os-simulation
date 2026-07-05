@@ -2,5 +2,5 @@
 void disk_free(){
     std::cout << "Filesystem   | Size |  3TB |  64TB  \n";
     std::cout << "------------------------------------\n";
-    std::cout << "esp          |  1G  | 222M | 778M   ";
+    std::cout << "esp          |  1G  | 222M | 778M   \n";
 }
