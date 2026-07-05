@@ -1,3 +1,4 @@
+#include <string>
 #include "kernel/kernel.h"
 #include "system/free_h.h"
 #include "driver_registry.h"
