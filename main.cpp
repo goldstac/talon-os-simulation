@@ -5,10 +5,14 @@
 #include <iostream>
 int main() {
     std::string shell;
-    std::cout << "Welcome To Talon Linux";
+    std::cout << "Welcome To Talon Linux\n";
     while (true){
-    std::cout << "admin@talon ~ #";
+    std::cout << "admin@talon ~ #\n";
     std::getline(std::cin,shell);
+    if (shell == "exit" or "shutdown"){
+     break;
+     std::cout << "exiting"
+    }
     }
      return 0;
      }
