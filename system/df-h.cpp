@@ -1,4 +1,4 @@
 #include <iostream>
 void disk_free(){
-    std::cout << "Filesystem";
+    std::cout << "Filesystem : Size";
 }
