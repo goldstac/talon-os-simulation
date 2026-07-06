@@ -2,10 +2,13 @@
 #include "kernel/kernel.h"
 #include "system/free_h.h"
 #include "driver_registry.h"
+#include "system/df-h.h"
+#include <string>
 #include <iostream>
 int main() {
     std::string shell;
     std::cout << "Welcome To Talon Linux\n";
+    register_device("keyboard_driver");
     while (true){
     std::cout << "admin@talon ~ # ";
     std::getline(std::cin,shell);

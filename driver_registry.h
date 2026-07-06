@@ -1,4 +1,5 @@
 #ifndef driver_registery
 #define driver_registry
-void register_device();
+#include <string>
+void register_device(std::string device_name);
 #endif
