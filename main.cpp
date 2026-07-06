@@ -13,8 +13,9 @@ int main() {
     std::cout << "admin@talon ~ # ";
     std::getline(std::cin,shell);
     if (shell == "exit" || shell == "shutdown"){
-     break;
      std::cout << "exiting\n";
+        break;
+     
 
     }
     else if (shell == ""){
