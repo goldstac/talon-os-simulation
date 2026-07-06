@@ -6,6 +6,7 @@
 #include <string>
 #include <iostream>
 int main() {
+    kernel();
     std::string shell;
     std::cout << "Welcome To Talon Linux\n";
     register_device("keyboard_driver");
