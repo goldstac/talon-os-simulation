@@ -46,19 +46,7 @@ int main() {
         if (strcmp(input,"whoami") == 0) {
             printf("%s\n",username);
         } 
-        else if (strcmp(input,"touch") == 0) {
-            printf("Enter Filename\n");
-            fgets(touch_filename,sizeof(touch_filename),stdin);
-            touch_filename[strcspn(touch_filename,"\n")] = '\0';
-            FILE *touch = fopen("touch.db","a");
-            if (touch == NULL) {
-                printf("Failed To Create File\n");
-            }
-            else{
-            fprintf(touch,"%s\n",touch_filename);
-            fclose(touch);
-            }
-        }  
+        
         else if (strcmp(input,"ls") == 0) {
             FILE *touch_file = fopen("touch.db","r");
         if (touch_file == NULL) {
@@ -95,19 +83,7 @@ int main() {
      else if (strcmp(input,"shutdown now") == 0 || strcmp(input,"exit") == 0) {
         printf("Shutting down..\n");
         break;
-     }
-     else if (strcmp(input,"help") == 0 || strcmp(input,"--help") == 0) {
-        printf("whoami: Prints username\n");
-        printf("--version: Prints version\n");
-        printf("touch: Creates a file\n");
-        printf("ls: List files\n");
-        printf("sysinfo: Prints system info\n");
-        printf("shutdown now & exit: Shutdown system\n");
-        printf("sudo pacman -Syu: Updates system\n");
-        printf("ipconfig : prints ip\n");
-        printf("ip a :prints ip\n");
-        printf("getmac: prints mac address\n");
-     }
+     }     
      else if (strcmp(input,"ipconfig") == 0) {
         printf("192.168.0.1\n");
      }
