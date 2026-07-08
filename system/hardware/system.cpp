@@ -4,5 +4,6 @@ void system(){
     if (cpu == "Intel"){
     
         char ram_profile[5] = "XMP";
+        char partition_scheme[10] = "GPT";
     }
 }
