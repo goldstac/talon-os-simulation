@@ -26,8 +26,9 @@ int main() {
      std::cout << "root";
     }
     else if (shell == "drivers-list") {
-     std::cout << "";
+     std::cout << "Storage Driver\n";
      //bruh
+
     }
     else if (shell == "pacman -Syu"){
         std::cout << "Updating Core  ###";
