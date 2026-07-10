@@ -29,7 +29,7 @@ int main() {
      std::cout << "";
     }
     else if (shell == "pacman -Syu"){
-        std::cout << "Updating Core";
+        std::cout << "Updating Core ###";
         std::cout << "Updating Extra";
     }
     else if (shell == "free -h") {
