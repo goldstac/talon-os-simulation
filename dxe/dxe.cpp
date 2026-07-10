@@ -2,7 +2,7 @@
 void driviers_init_start_msg(std::string drivers_init_start){
 
 }
-int drivers_init(){
+int drivers_init(std::string drivers_init_start){
 
 }
 int storage_driver(){
