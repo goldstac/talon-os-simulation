@@ -30,7 +30,7 @@ int main() {
     }
     else if (shell == "pacman -Syu"){
         std::cout << "Updating Core ###";
-        std::cout << "Updating Extra";
+        std::cout << "Updating Extra ###";
     }
     else if (shell == "free -h") {
      std::cout << "Memory| Free | Using\n";
