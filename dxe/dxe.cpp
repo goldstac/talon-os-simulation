@@ -45,7 +45,7 @@ int ahci_driver(){
 drivers_init("");
 }
 int keyboard_driver(){
-drivers_init();
+drivers_init("");
 }
 int mouse_driver(){
 drivers_init();
