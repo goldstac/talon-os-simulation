@@ -1,1 +1,4 @@
 #include <iostream>
+void sec(){
+    
+}
