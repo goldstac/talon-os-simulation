@@ -24,7 +24,7 @@ int usb_driver(){
 drivers_init("");
 }
 int ethernet_driver(){
-drivers_init();
+drivers_init("");
 }
 int wifi_driver(){
 drivers_init();
