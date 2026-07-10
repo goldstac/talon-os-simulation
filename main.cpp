@@ -29,7 +29,7 @@ int main() {
      std::cout << "";
     }
     else if (shell == ""){
-        std::cout << 
+        std::cout << ""
     }
     else if (shell == "free -h") {
      std::cout << "Memory| Free | Using\n";
