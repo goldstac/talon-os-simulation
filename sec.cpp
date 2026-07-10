@@ -1,7 +1,7 @@
 #include <iostream>
-void log_sec(char sec_log[20]){
+void log_sec(std::string sec_log){
 
 }
 void sec(){
-log_sec();
+log_sec("[SEC]");
 }
