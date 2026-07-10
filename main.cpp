@@ -27,6 +27,7 @@ int main() {
     }
     else if (shell == "drivers-list") {
      std::cout << "";
+     //bruh
     }
     else if (shell == "pacman -Syu"){
         std::cout << "Updating Core  ###";
