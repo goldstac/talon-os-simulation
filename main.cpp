@@ -28,7 +28,7 @@ int main() {
     else if (shell == "drivers-list") {
      std::cout << "";
     }
-    else if (shell == ""){
+    else if (shell == "sudo pacman -Syu"){
         std::cout << " ";
     }
     else if (shell == "free -h") {
