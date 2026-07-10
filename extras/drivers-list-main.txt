@@ -23,7 +23,7 @@ int ethernet_driver(){
 drivers_init("[DRIVER_INIT_MSG]");
 }
 int wifi_driver(){
-drivers_init("[DRIVER_INIT_MSG]");
+
 }
 int cpu_driver(){
 
