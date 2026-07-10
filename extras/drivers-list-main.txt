@@ -29,10 +29,10 @@ int cpu_driver(){
 drivers_init("[DRIVER_INIT_MSG]");
 }
 int gpu_driver(){
-drivers_init("[DRIVER_INIT_MSG]");
+
 }
 int nvme_driver(){
-drivers_init("[DRIVER_INIT_MSG]");
+
 }
 int sata_driver(){
 
