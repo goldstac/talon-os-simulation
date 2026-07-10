@@ -9,7 +9,7 @@ int displayport_driver(){
 drivers_init("");
 }
 int hdmi_driver(){
-drivers_init("");
+drivers_init("[DRIVER_INIT_MSG]");
 }
 int ram_driver(){
 drivers_init("[DRIVER_INIT_MSG]");
