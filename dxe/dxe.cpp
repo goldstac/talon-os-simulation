@@ -33,7 +33,7 @@ int cpu_driver(){
 drivers_init("");
 }
 int gpu_driver(){
-drivers_init("");
+drivers_init("[DRIVER_INIT_MSG]");
 }
 int nvme_driver(){
 drivers_init("[DRIVER_INIT_MSG]");
