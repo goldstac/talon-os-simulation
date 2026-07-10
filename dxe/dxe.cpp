@@ -3,7 +3,7 @@ int drivers_init(std::string drivers_init_start_message){
 
 }
 int storage_driver(){
-drivers_init("");
+drivers_init("[DRIVER_INIT_MSG]");
 }
 int displayport_driver(){
 drivers_init("[DRIVER_INIT_MSG]");
