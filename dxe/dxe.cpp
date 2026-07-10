@@ -30,7 +30,7 @@ int wifi_driver(){
 drivers_init("");
 }
 int cpu_driver(){
-drivers_init("");
+drivers_init("[DRIVER_INIT_MSG]");
 }
 int gpu_driver(){
 drivers_init("[DRIVER_INIT_MSG]");
