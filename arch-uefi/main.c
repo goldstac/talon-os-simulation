@@ -47,11 +47,6 @@ int main() {
             printf("%s\n",username);
         } 
         
-        else if (strcmp(input,"ls") == 0) {
-            FILE *touch_file = fopen("touch.db","r");
-        if (touch_file == NULL) {
-            printf("Touch DB Error : 404 FILE NOT FOUND\n");
-        }
         else{
             while (fgets(ls,sizeof(ls),touch_file)) {
             ls[strcspn(ls,"\n")] = '\0';
