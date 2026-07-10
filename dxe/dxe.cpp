@@ -18,7 +18,7 @@ int pcie_bus_driver(){
 drivers_init("");
 }
 int efi_driver(){
-drivers_init("");
+drivers_init("[DRIVER_INIT_MSG]");
 }
 int usb_driver(){
 drivers_init("[DRIVER_INIT_MSG]");
