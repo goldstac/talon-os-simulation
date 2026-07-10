@@ -47,8 +47,8 @@ int mouse_driver(){
 drivers_init("[DRIVER_INIT_MSG]");
 }
 int audio_driver(){
-
+drivers_init("[DRIVER_INIT_MSG]");
 }
 int ide_driver(){
-
+drivers_init("[DRIVER_INIT_MSG]");
 }
