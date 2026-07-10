@@ -54,5 +54,5 @@ int audio_driver(){
 drivers_init("");
 }
 int ide_driver(){
-drivers_init();
+drivers_init("");
 }
