@@ -39,7 +39,7 @@ int nvme_driver(){
 drivers_init("");
 }
 int sata_driver(){
-drivers_init();
+drivers_init("");
 }
 int ahci_driver(){
 drivers_init();
