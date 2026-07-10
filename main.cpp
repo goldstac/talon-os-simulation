@@ -39,6 +39,18 @@ int main() {
      //bruh
 
     }
+    else if (shell = "driverlogs --list"){
+         std::cout << "Storage Driver\n";
+     std::cout << "Storage Driver\n";
+     std::cout << "Storage Driver\n";
+     std::cout << "Storage Driver\n";
+     std::cout << "Storage Driver\n";
+     std::cout << "Storage Driver\n";
+     std::cout << "Storage Driver\n";
+     std::cout << "Storage Driver\n";
+     std::cout << "Storage Driver\n";
+     std::cout << "Storage Driver\n";
+    }
     else if (shell == "pacman -Syu"){
         std::cout << "Updating Core  ###";
         std::cout << "Updating Extra ###";
