@@ -15,7 +15,7 @@ int ram_driver(){
 drivers_init("");
 }
 int pcie_bus_driver(){
-drivers_init("");
+drivers_init("[DRIVER_INIT_MSG]");
 }
 int efi_driver(){
 drivers_init("[DRIVER_INIT_MSG]");
