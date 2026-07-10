@@ -30,7 +30,7 @@ int main() {
     }
     else if (shell == "free -h") {
      std::cout << "Memory: Free : Using\n";
-     std::cout
+     std::cout <<
      std::cout << "96 GB : 93GB : 3 GB  \n";
      continue;
     }
