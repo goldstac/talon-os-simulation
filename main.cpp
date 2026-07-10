@@ -23,7 +23,7 @@ int main() {
      continue;
     }
     else if (shell == "whoami") {
-     std::cout << "admin";
+     std::cout << "root";
     }
     else if (shell == "drivers-list") {
      std::cout << "";
