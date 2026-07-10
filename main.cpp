@@ -11,7 +11,7 @@ int main() {
     std::cout << "Welcome To Talon Linux\n";
     register_device("keyboard_driver");
     while (true){
-    std::cout << "admin@talon ~ # ";
+    std::cout << "root@talon ~ # ";
     std::getline(std::cin,shell);
     if (shell == "exit" || shell == "shutdown"){
      std::cout << "exiting\n";
