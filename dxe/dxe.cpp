@@ -51,7 +51,7 @@ int mouse_driver(){
 drivers_init("");
 }
 int audio_driver(){
-drivers_init("");
+drivers_init("[DRIVER_INIT_MSG]");
 }
 int ide_driver(){
 drivers_init("[DRIVER_INIT_MSG]");
