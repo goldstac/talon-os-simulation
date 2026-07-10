@@ -6,7 +6,7 @@ int storage_driver(){
 drivers_init("");
 }
 int displayport_driver(){
-drivers_init("");
+drivers_init("[DRIVER_INIT_MSG]");
 }
 int hdmi_driver(){
 drivers_init("[DRIVER_INIT_MSG]");
