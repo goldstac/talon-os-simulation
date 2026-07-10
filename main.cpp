@@ -32,7 +32,7 @@ int main() {
         std::cout << "Updating Core  ###";
         std::cout << "Updating Extra ###";
         std::cout << "";
-        std::cout << ""
+        std::cout << "";
     }
     else if (shell == "free -h") {
      std::cout << "Memory| Free | Using\n";
