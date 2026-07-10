@@ -28,6 +28,7 @@ int main() {
     else if (shell == "drivers-list") {
      std::cout << "";
     }
+    else if (shell == ""){}
     else if (shell == "free -h") {
      std::cout << "Memory| Free | Using\n";
      std::cout << "------|------|-------";
