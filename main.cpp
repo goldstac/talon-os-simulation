@@ -29,8 +29,9 @@ int main() {
      std::cout << "";
     }
     else if (shell == "pacman -Syu"){
-        std::cout << "Updating Core ###";
+        std::cout << "Updating Core  ###";
         std::cout << "Updating Extra ###";
+        std::
     }
     else if (shell == "free -h") {
      std::cout << "Memory| Free | Using\n";
