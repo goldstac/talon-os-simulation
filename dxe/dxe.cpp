@@ -21,7 +21,7 @@ int efi_driver(){
 drivers_init("");
 }
 int usb_driver(){
-drivers_init();
+drivers_init("");
 }
 int ethernet_driver(){
 drivers_init();
