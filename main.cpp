@@ -41,7 +41,7 @@ int main() {
     } else if (shell == "iwctl") {
       while (true) {
         std::cout << "[iwd #]  ";
-        std::cin >> iwd;
+        std::getline(std::cin, iwd);
         if (iwd == "devicelist") {
           std::cout << "dummy";
           continue;
