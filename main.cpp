@@ -22,8 +22,8 @@ int main() {
     } else if (shell.substr(0, 11) == "root locate") {
       std::string target = shell.substr(12);
       if (kernel_memory_locate.count(target)) {
-        std::cout << "[KERNEL] " << target << "" << kernel_memory_locate[target]
-                  << "\n";
+        std::cout << "[KERNEL] " << target << " "
+                  << kernel_memory_locate[target] << "\n";
       }
       continue;
     } else if (shell == "") {
@@ -32,7 +32,7 @@ int main() {
       std::cout << "root";
     }
     //
-    if (shell == "pacman -Syu") {
+    else if (shell == "pacman -Syu") {
       std::cout << "Updating Core  ###";
       std::cout << "Updating Extra ###";
       std::cout << "";
