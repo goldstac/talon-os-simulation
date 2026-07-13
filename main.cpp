@@ -1,9 +1,13 @@
 #include "driver_registry.h"
 #include "kernel/kernel.h"
 #include <iostream>
+#include <map>
 #include <string>
+std::map<std::string, std::string> kernel_memory_locate = {
+    {"wlan", "0Xffffffff81812"},
+};
 int main() {
-  kernel();
+  // kernel();
   std::string shell;
   std::string iwd;
   std::cout << "Welcome To Talon Linux\n";
@@ -15,6 +19,13 @@ int main() {
       std::cout << "exiting\n";
       break;
 
+    } else if (shell.substr(0, 11) == "root locate") {
+      std::string target = shell.substr(12);
+      if (kernel_memory_locate.count(target)) {
+        std::cout << "[KERNEL] " << target << "" << kernel_memory_locate[target]
+                  << "\n";
+      }
+      continue;
     } else if (shell == "") {
       continue;
     } else if (shell == "whoami") {
@@ -45,6 +56,8 @@ int main() {
         if (iwd == "device list") {
           std::cout << "wlan0\n";
           continue;
+        } else if (iwd == "exit") {
+          break;
         }
       }
     } else {
