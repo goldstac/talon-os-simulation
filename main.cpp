@@ -42,8 +42,8 @@ int main() {
       while (true) {
         std::cout << "[iwd #]  ";
         std::getline(std::cin, iwd);
-        if (iwd == "device list\n") {
-          std::cout << "wlan0";
+        if (iwd == "device list") {
+          std::cout << "wlan0\n";
           continue;
         }
       }
