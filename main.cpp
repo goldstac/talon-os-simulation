@@ -80,7 +80,7 @@ int main() {
     else if (shell == "which penguin"){
       std::cout << "/bin/penguin\n";
     }
-    else if (shell == "chsh -s $(which zsh)" || shell == "chsh -s $(bash)"){
+    else if (shell == "chsh -s $(which zsh)" || shell == "chsh -s $(which bash)"){
       std::cout << "[Talon] No\n";
       std::cout << "[Kernel] No\n";
     }
