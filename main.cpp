@@ -77,6 +77,13 @@ int main() {
     std::system("clear");
 #endif
     }
+    else if (shell == "which penguin"){
+      std::cout << "/bin/penguin\n";
+    }
+    else if (shell == "chsh -s $(which zsh)" || shell == "chsh -s $(bash)"){
+      std::cout << "[Talon] No\n";
+      std::cout << "[Kernel] No\n";
+    }
     else {
       std::cout << "Command Not Found\n";
       continue;
