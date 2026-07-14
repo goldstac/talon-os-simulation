@@ -4,6 +4,7 @@
 #include <iostream>
 #include <map>
 #include <string>
+#include <cstdlib>
 std::map<std::string, std::string> kernel_memory_locate = {
     {"wlan", "0Xffffffff81812"},
 };
@@ -68,6 +69,13 @@ int main() {
     }
     else if (shell == "$SHELL") {
       std::cout << "Penguin\n";
+    }
+    else if (shell == "clear"){
+         #ifdef _WIN32
+    std::system("cls");
+#else
+    std::system("clear");
+#endif
     }
     else {
       std::cout << "Command Not Found\n";
