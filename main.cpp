@@ -1,5 +1,6 @@
 #include "driver_registry.h"
 #include "kernel/kernel.h"
+#include "filesystem/proc/cpuinfo.h"
 #include <iostream>
 #include <map>
 #include <string>
@@ -60,7 +61,12 @@ int main() {
           break;
         }
       }
-    } else {
+      
+    } 
+    else if (shell == "cat proc/cpuinfo"){
+      cpuinfo();
+    }
+    else {
       std::cout << "Command Not Found\n";
       continue;
     }

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string> 
-
-int main() {
+#include "cpuinfo.h"
+void cpuinfo() {
     std::string cpu_model = "Intel Core Ultra 9 285K";
     int cpu_cores = 24;
     int cpu_threads = 24;
@@ -18,4 +18,5 @@ int main() {
     std::cout << "L2 Cache  | " << l2_cache << "\n";
     std::cout << "L3 Cache  | " << l3_cache << "\n";
     std::cout << "Max Speed | " << max_speed << "\n"; 
+    
 }
