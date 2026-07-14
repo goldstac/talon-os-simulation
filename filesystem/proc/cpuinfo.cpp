@@ -1,7 +1,20 @@
 #include "cpuinfo.h"
 #include <iostream>
-void cpuinfo() {
-  char cpu_model[20] = "Intel Core Ultra 9 285K";
+#include <string>
+int main() {
+  std::string cpu_name = "Intel Core Ultra 9 285K";
   int cpu_cores = 24;
-  int cpu_threads = ;
+  int cpu_threads = 24;
+  std::string l2_cache = "40";
+  std::string l3_cache - "36";
+  std::string max_speed = "5.7 GHz";
+  std::cout << "----------------------------\n";
+  std::cout << "        CPU INFO \n";
+  std::cout << "-----------------------------\n";
+  std::cout << "Name      |";
+  << cpu_name << "\n" std::cout << "Cores     |";
+  << cpu_cores << "\n" std::cout << "Threads   |";
+  << cpu_threads << "\n" std::cout << "L2 Cache  |";
+  << l2_cache << "\n" std::cout << "L3 Cache  |";
+  << l3_cache << "\n" std::cout << "Max Speed |" << max_speed << "\n"
 }
