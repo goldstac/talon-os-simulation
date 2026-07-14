@@ -67,7 +67,7 @@ int main() {
       cpuinfo();
     }
     else if (shell == "$SHELL") {
-      std::cout << "Penguin";
+      std::cout << "Penguin\n";
     }
     else {
       std::cout << "Command Not Found\n";
