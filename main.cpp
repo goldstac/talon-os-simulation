@@ -1,6 +1,7 @@
 #include "driver_registry.h"
 #include "kernel/kernel.h"
 #include "filesystem/proc/cpuinfo.h"
+#include "filesystem/proc/gpuinfo.h"
 #include <iostream>
 #include <map>
 #include <string>
@@ -83,6 +84,9 @@ int main() {
     else if (shell == "chsh -s $(which zsh)" || shell == "chsh -s $(which bash)"){
       std::cout << "[Talon] No\n";
       std::cout << "[Kernel] No\n";
+    }
+    else if (shell == "cat proc/gpuinfo"){
+      gpuinfo();
     }
     else {
       std::cout << "Command Not Found\n";

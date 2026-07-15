@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include "gpuinfo.h"
-int main(){
+void gpuinfo(){
 
     std::string gpu_name = "Nvidia GeForce RTX 5090";
     std::string vram = "32 GB";
@@ -12,7 +12,7 @@ int main(){
     std::string memory_bus = "512-Bit";
     std::string bandwith = "1.79 TB/S";
     std::cout << "----------------------------------------\n";
-    std::cout << "               GPU INFO";
+    std::cout << "               GPU INFO\n";
     std::cout << "----------------------------------------\n";
     std::cout << "Name              |" << gpu_name << "\n";
     std::cout << "VRAM              |" << vram << "\n";

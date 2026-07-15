@@ -1,3 +1,4 @@
 #!/bin/bash
-g++ -o main.exe main.cpp driver_registry.cpp kernel/kernel.c filesystem/proc/cpuinfo.cpp
+// this is for developer testing not for actual use
+g++ -o main.exe main.cpp driver_registry.cpp kernel/kernel.c filesystem/proc/cpuinfo.cpp filesystem/proc/gpuinfo.cpp
 ./main.exe
