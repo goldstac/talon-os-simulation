@@ -20,6 +20,6 @@ int main(){
     std::cout << "RAM Type          |" <<  << "";
     std::cout << "Architecture      |" <<  << "";
     std::cout << "Interface         |" <<  << "";
-    std::cout << "Memory Bus        |" << << "";
+    std::cout << "Memory Bus        |" <<  << "";
     std::cout << "Memory Bandwith   |" << << "";
 }
