@@ -13,7 +13,7 @@ int main(){
     std::string bandwith = "1.79 TB/S";
     std::cout << "--------------------------------";
     std::cout << "          GPU INFO";
-    std::cout << "--------------------------------";
+    std::cout << "----------------------------------------";
     std::cout << "Name              |" << gpu_name << "\n";
     std::cout << "VRAM              |" << vram << "\n";
     std::cout << "CUDA Cores        |" << cuda_cores << "\n";
