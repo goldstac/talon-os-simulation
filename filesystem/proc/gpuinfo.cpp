@@ -19,7 +19,7 @@ int main(){
     std::cout << "CUDA Cores        |" << cuda_cores << "";
     std::cout << "RAM Type          |" << memory_type << "";
     std::cout << "Architecture      |" << architecture << "";
-    std::cout << "Interface         |" <<  << "";
+    std::cout << "Interface         |" << interface << "";
     std::cout << "Memory Bus        |" <<  << "";
     std::cout << "Memory Bandwith   |" <<  << "";
 }
