@@ -7,7 +7,6 @@
 #include <cstdlib>
 std::map<std::string, std::string> kernel_memory_locate = {
     {"wlan", "0Xffffffff81812"},
-    {"nvme", "0Xffffffff36882"},
 };
 int main() {
   // kernel();
