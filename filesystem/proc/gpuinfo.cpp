@@ -15,7 +15,7 @@ int main(){
     std::cout << "          GPU INFO";
     std::cout << "--------------------------------";
     std::cout << "Name              |" << gpu_name << "";
-    std::cout << "VRAM              |" <<  << "";
+    std::cout << "VRAM              |" << vram << "";
     std::cout << "CUDA Cores        |" <<  << "";
     std::cout << "RAM Type          |" <<  << "";
     std::cout << "Architecture      |" <<  << "";
