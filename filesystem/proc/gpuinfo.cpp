@@ -21,5 +21,5 @@ int main(){
     std::cout << "Architecture      |" << << "";
     std::cout << "Interface         |" << << "";
     std::cout << "Memory Bus        |" << << "";
-    std::cout << "Memory Bandwith   |" <<
+    std::cout << "Memory Bandwith   |" << <<
 }
