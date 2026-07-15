@@ -1,11 +1,12 @@
 #include "driver_registry.h"
-#include "kernel/kernel.h"
 #include "filesystem/proc/cpuinfo.h"
 #include "filesystem/proc/gpuinfo.h"
+#include "kernel/kernel.h"
+#include "uefi.h"
+#include <cstdlib>
 #include <iostream>
 #include <map>
 #include <string>
-#include <cstdlib>
 std::map<std::string, std::string> kernel_memory_locate = {
     {"wlan", "0Xffffffff81812"},
 };
@@ -63,32 +64,28 @@ int main() {
           break;
         }
       }
-      
-    } 
-    else if (shell == "cat proc/cpuinfo"){
+
+    } else if (shell == "cat proc/cpuinfo") {
       cpuinfo();
-    }
-    else if (shell == "$SHELL") {
+    } else if (shell == "$SHELL") {
       std::cout << "Penguin\n";
-    }
-    else if (shell == "clear"){
-         #ifdef _WIN32
-    std::system("cls");
+    } else if (shell == "clear") {
+#ifdef _WIN32
+      std::system("cls");
 #else
-    std::system("clear");
+      std::system("clear");
 #endif
-    }
-    else if (shell == "which penguin"){
+    } else if (shell == "which penguin") {
       std::cout << "/bin/penguin\n";
-    }
-    else if (shell == "chsh -s $(which zsh)" || shell == "chsh -s $(which bash)"){
+    } else if (shell == "chsh -s $(which zsh)" ||
+               shell == "chsh -s $(which bash)") {
       std::cout << "[Talon] No\n";
       std::cout << "[Kernel] No\n";
-    }
-    else if (shell == "cat proc/gpuinfo"){
+    } else if (shell == "cat proc/gpuinfo") {
       gpuinfo();
-    }
-    else {
+    } else if (shell == "reboot uefi") {
+      uefi();
+    } else {
       std::cout << "Command Not Found\n";
       continue;
     }
