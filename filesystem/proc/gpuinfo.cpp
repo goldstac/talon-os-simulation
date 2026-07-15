@@ -11,7 +11,7 @@ int main(){
     std::string interface = "PCIE 5.0 X16 Slot";
     std::string memory_bus = "512-Bit";
     std::string bandwith = "1.79 TB/S";
-    std::cout << "----------------------------------------";
+    std::cout << "----------------------------------------\n";
     std::cout << "               GPU INFO";
     std::cout << "----------------------------------------";
     std::cout << "Name              |" << gpu_name << "\n";
