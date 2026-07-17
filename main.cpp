@@ -85,7 +85,9 @@ int main() {
       gpuinfo();
     } else if (shell == "reboot uefi") {
       uefi();
-    } else {
+    }
+
+    else {
       std::cout << "Command Not Found\n";
       continue;
     }
