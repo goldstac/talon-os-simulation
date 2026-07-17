@@ -34,7 +34,7 @@ jobs:
         timeout-minutes: 60
         with:
           secret: ${{ secrets.GITHUB_TOKEN }}
-          approvers: YOUR_GITHUB_USERNAME  # ⚠️ CHANGE THIS TO YOUR EXACT GITHUB USERNAME
+          approvers: goldstac  # ⚠️ CHANGE THIS TO YOUR EXACT GITHUB USERNAME
           minimum-approvals: 1
           issue-title: "Approval required for OpenCode"
           issue-body: "OpenCode was triggered. Please reply to this issue with `approve` or `yes` to allow it to run."
