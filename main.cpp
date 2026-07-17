@@ -2,6 +2,7 @@
 #include "filesystem/proc/cpuinfo.h"
 #include "filesystem/proc/gpuinfo.h"
 #include "kernel/kernel.h"
+#include "logo.h"
 #include "uefi.h"
 #include <cstdlib>
 #include <iostream>
@@ -86,7 +87,9 @@ int main() {
     } else if (shell == "reboot uefi") {
       uefi();
     }
-
+    else if (shell == "penguinfetch"){
+     printLogo();
+    }
     else {
       std::cout << "Command Not Found\n";
       continue;
