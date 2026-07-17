@@ -1,5 +1,7 @@
 # Talon OS Simulation
 
+> **⚠️ Under Development** — This project is still actively receiving updates. Some components (e.g. DXE) are stubs/skeletons and not yet fully implemented.
+
 A user-space simulation of the Talon Linux operating system environment, written primarily in C++ with C components. It features a shell interface, a simulated kernel boot sequence, UEFI firmware emulation, a driver execution environment (DXE), driver registry, NVRAM simulation, and virtual filesystem subsystems.
 
 ## Features
