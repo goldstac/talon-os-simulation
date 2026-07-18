@@ -1,7 +1,14 @@
-// lol im not good at batchfiles lol 
-// for windows ppl :)
-echo "Compiling"
-g++ -o main.exe main.cpp kernel/kernel.c driver_registry.cpp filesystem/proc/cpuinfo.cpp
-echo "Running"
-./main.exe
+@echo off
+setlocal enabledelayedexpansion
 
+echo Compiling system objects...
+g++ -c system/free-h.cpp -o bin/free-h.o
+g++ -c system/df-h.cpp -o bin/df-h.o
+
+echo Compiling Main ^& Kernel...
+for /f "usebackq skip=2 tokens=3,*" %%A in ("quick.sh") do set QUICK_SRC=%%B
+
+g++ -o main %QUICK_SRC% bin/free-h.o bin/df-h.o
+
+echo Running Main...
+main
