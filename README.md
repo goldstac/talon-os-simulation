@@ -18,7 +18,7 @@ A user-space simulation of the Talon Linux operating system environment, written
 - **Virtual Filesystem** (`filesystem/`) — Simulated `/proc/cpuinfo` (Intel Core Ultra 9 285K) and `/proc/gpuinfo` (Nvidia GeForce RTX 5090)
 - **Hardware Detection** (`system/hardware/system.cpp`) — Hardware profile stubs
 - **Logo** (`logo.cpp`) — ASCII art "Talon Linux" branding displayed by `penguinfetch`
-- **Arch UEFI** (`arch-uefi/`) — Standalone GRUB-like bootloader (C) and incomplete Arch shell (C++)
+- **Arch UEFI** (`arch-uefi/`) — GRUB-like boot menu (C) and incomplete Arch shell (C++)
 
 ## Build & Run
 
@@ -63,7 +63,7 @@ g++ -o main.exe main.cpp kernel/kernel.c driver_registry.cpp filesystem/proc/cpu
 ├── system/hardware/
 │   └── system.cpp        # Hardware detection stubs
 ├── arch-uefi/
-│   ├── main.c            # Standalone GRUB-like bootloader
+│   ├── main.c            # GRUB-like boot menu
 │   ├── arch.cpp          # Incomplete Arch shell
 │   └── arch.h            # Empty header
 ├── extras/               # Miscellaneous text files
