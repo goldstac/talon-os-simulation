@@ -6,4 +6,7 @@ int main() {
   std::cout << "Boot Option : [1] Talon Linux\n";
   std::cout << "Enter Boot Option : ";
   std::cin >> bootloader_option;
+  if (bootloader_option == 1) {
+    //
+  }
 }
