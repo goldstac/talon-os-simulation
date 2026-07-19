@@ -11,7 +11,7 @@ void uefi() {
   cout << " Unified Extensible Firmware Interface\n";
   cout << "-----------------------------------------\n";
   cout << "|Boot Order    |  Other                 |\n";
-  cout << "|---------------|------------------------|\n";
+  cout << "|--------------|------------------------|\n";
   cout << "| 1| Talon     | Secure Boot | Disabled |\n";
   cout << "| 2| Arch      |   XMP       | Enabled  |\n";
   cout << "| 3| USB       |   TPM       | Enabled  |\n";
