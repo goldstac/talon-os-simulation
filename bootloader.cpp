@@ -1,2 +1,2 @@
 #include <iostream>
-int main() {}
+int main() { std::string bootloader_name = ""; }
