@@ -10,6 +10,7 @@ int main() {
   std::cout << "Enter Boot Option : ";
   std::cin >> bootloader_option;
   if (bootloader_option == 1) {
+    std::this_thread::sleep_for(std::chrono::seconds(2));
     kernel();
   }
 }
