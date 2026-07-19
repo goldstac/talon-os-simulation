@@ -9,7 +9,7 @@ void uefi() {
   cout << "Welcome TO Unified Extensible Firmware Interface\n";
   cout << "...\n";
   cout << " Unified Extensible Firmware Interface\n";
-  cout << "-----------------------------------------\n";
+  cout << "----------------------------------------|\n";
   cout << "|Boot Order    |  Other                 |\n";
   cout << "|--------------|------------------------|\n";
   cout << "| 1| Talon     | Secure Boot | Disabled |\n";
