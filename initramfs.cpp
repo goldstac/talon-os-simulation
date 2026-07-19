@@ -1,2 +1,3 @@
 #include <iostream>
-int main() {}
+#include
+int main() { std::cout << "[initramfs] starting.."; }
