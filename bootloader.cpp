@@ -1,5 +1,7 @@
 #include "kernel/kernel.h"
+#include <chrono>
 #include <iostream>
+
 int main() {
   std::string bootloader_name = "Talon Bootloader\n";
   int bootloader_option;
