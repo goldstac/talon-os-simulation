@@ -1,3 +1,4 @@
+#include "kernel/kernel.h"
 #include <iostream>
 int main() {
   std::string bootloader_name = "Talon Bootloader\n";
@@ -7,6 +8,5 @@ int main() {
   std::cout << "Enter Boot Option : ";
   std::cin >> bootloader_option;
   if (bootloader_option == 1) {
-    //
   }
 }
