@@ -1,7 +1,9 @@
+#include "bootloader.h"
 #include "driver_registry.h"
 #include "filesystem/proc/cpuinfo.h"
 #include "filesystem/proc/gpuinfo.h"
 #include "kernel/kernel.h"
+
 #include "logo.h"
 #include "uefi.h"
 #include <cstdlib>
@@ -12,7 +14,7 @@ std::map<std::string, std::string> kernel_memory_locate = {
     {"wlan", "0Xffffffff81812"},
 };
 int main() {
-  // kernel();
+  bootloader();
   std::string shell;
   std::string iwd;
   std::cout << "Welcome To Talon Linux\n";
@@ -86,11 +88,9 @@ int main() {
       gpuinfo();
     } else if (shell == "reboot uefi") {
       uefi();
-    }
-    else if (shell == "penguinfetch"){
-     printLogo();
-    }
-    else {
+    } else if (shell == "penguinfetch") {
+      printLogo();
+    } else {
       std::cout << "Command Not Found\n";
       continue;
     }
