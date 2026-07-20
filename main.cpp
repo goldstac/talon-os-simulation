@@ -3,7 +3,6 @@
 #include "filesystem/proc/cpuinfo.h"
 #include "filesystem/proc/gpuinfo.h"
 #include "kernel/kernel.h"
-
 #include "logo.h"
 #include "uefi.h"
 #include <cstdlib>
@@ -12,6 +11,9 @@
 #include <string>
 std::map<std::string, std::string> kernel_memory_locate = {
     {"wlan", "0Xffffffff81812"},
+};
+std::map<std::string, std::string> locate_bin = {
+    {"penguinfetch", "/bin/penguinfetch"},
 };
 int main() {
   bootloader();
@@ -33,6 +35,12 @@ int main() {
                   << kernel_memory_locate[target] << "\n";
       }
       continue;
+    } else if (shell.substr(0, 10) == "locate bin") {
+      std::string target_locate_bin = shell.substr(11);
+      if (locate_bin.count(target_locate_bin)) {
+        std::cout << "[KERNEL] " << target_locate_bin << " "
+                  << locate_bin[target_locate_bin] << "\n";
+      }
     } else if (shell == "") {
       continue;
     } else if (shell == "whoami") {
