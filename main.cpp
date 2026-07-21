@@ -15,7 +15,7 @@ std::map<std::string, std::string> kernel_memory_locate = {
 std::map<std::string, std::string> locate_bin = {
     {"penguinfetch", "/bin/penguinfetch"},
     {"bash", "/bin/bash"},
-};
+    {"zsh", "/bin/zsh"}};
 int main() {
   bootloader();
   std::string shell;
