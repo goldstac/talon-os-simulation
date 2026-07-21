@@ -35,8 +35,8 @@ int main() {
                   << kernel_memory_locate[target] << "\n";
       }
       continue;
-    } else if (shell.substr(0, 10) == "locate bin") {
-      std::string target_locate_bin = shell.substr(11);
+    } else if (shell.substr(0, 5) == "which") {
+      std::string target_locate_bin = shell.substr(6);
       if (locate_bin.count(target_locate_bin)) {
         std::cout << "[KERNEL] " << target_locate_bin << " "
                   << locate_bin[target_locate_bin] << "\n";
