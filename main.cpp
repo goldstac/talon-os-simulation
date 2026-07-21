@@ -102,6 +102,8 @@ int main() {
       uefi();
     } else if (shell == "penguinfetch") {
       printLogo();
+    } else if (shell == "calculator") {
+      std::cout << "-----------------------\n";
     } else {
       std::cout << "Command Not Found\n";
       continue;
