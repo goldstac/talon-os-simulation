@@ -102,6 +102,7 @@ int main() {
       uefi();
     } else if (shell == "penguinfetch") {
       printLogo();
+      continue;
     } else if (shell == "calculator") {
       std::cout << "-----------------------\n";
       std::cout << "   Talon Calculator\n";
@@ -109,6 +110,7 @@ int main() {
       std::cout << "[Calculator] Enter First Number >> ";
       std::cin >> first_number;
       std::cout << "[Calculator] Enter Second Number >> ";
+      continue;
     } else {
       std::cout << "Command Not Found\n";
       continue;
