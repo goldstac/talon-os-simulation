@@ -106,6 +106,7 @@ int main() {
       std::cout << "-----------------------\n";
       std::cout << "   Talon Calculator\n";
       std::cout << "-----------------------\n";
+      std::cout << "[Calculator]"
     } else {
       std::cout << "Command Not Found\n";
       continue;
