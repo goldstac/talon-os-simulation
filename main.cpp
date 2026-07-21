@@ -104,7 +104,7 @@ int main() {
       printLogo();
     } else if (shell == "calculator") {
       std::cout << "-----------------------\n";
-      std::cout << "   Talon Calculator";
+      std::cout << "   Talon Calculator\n";
       std::cout << "-----------------------\n";
     } else {
       std::cout << "Command Not Found\n";
