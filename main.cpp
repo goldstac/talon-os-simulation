@@ -107,6 +107,7 @@ int main() {
       std::cout << "   Talon Calculator\n";
       std::cout << "-----------------------\n";
       std::cout << "[Calculator] Enter First Number >> ";
+      std::cin >> first_number;
     } else {
       std::cout << "Command Not Found\n";
       continue;
