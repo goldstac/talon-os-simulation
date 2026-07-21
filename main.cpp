@@ -19,6 +19,7 @@ std::map<std::string, std::string> locate_bin = {
 };
 int main() {
   bootloader();
+  std::cin.ignore();
   int first_number;
   int second_number;
   std::string shell;
@@ -109,7 +110,11 @@ int main() {
       std::cout << "-----------------------\n";
       std::cout << "[Calculator] Enter First Number >> ";
       std::cin >> first_number;
+      std::cin.ignore();
       std::cout << "[Calculator] Enter Second Number >> ";
+      std::cin >> second_number;
+      std::cin.ignore();
+      std::cout << "[Calculator] Result: " << first_number + second_number << "\n";
       continue;
     } else {
       std::cout << "Command Not Found\n";
