@@ -108,6 +108,7 @@ int main() {
       std::cout << "-----------------------\n";
       std::cout << "[Calculator] Enter First Number >> ";
       std::cin >> first_number;
+      std::cout << "[Calculator] Enter Second Number >> ";
     } else {
       std::cout << "Command Not Found\n";
       continue;
