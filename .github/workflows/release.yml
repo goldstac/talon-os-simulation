@@ -45,15 +45,22 @@ jobs:
 
       - name: Build (Linux)
         if: runner.os == 'Linux'
-        run: g++ -o talon-os-linux main.cpp driver_registry.cpp kernel/kernel.c filesystem/proc/cpuinfo.cpp filesystem/proc/gpuinfo.cpp uefi.cpp logo.cpp bootloader.cpp
+        run: |
+          SRC=$(sed -n '3p' quick.sh | sed 's/^g++ -o [^ ]* //')
+          g++ -o talon-os-linux $SRC
 
       - name: Build (Windows)
         if: runner.os == 'Windows'
-        run: g++ -o talon-os-windows.exe main.cpp driver_registry.cpp kernel/kernel.c filesystem/proc/cpuinfo.cpp filesystem/proc/gpuinfo.cpp uefi.cpp logo.cpp bootloader.cpp
+        run: |
+          $SRC = Get-Content quick.sh | Select-Object -Index 2
+          $SRC = $SRC -replace '^g\+\+ -o [^ ]+ ', ''
+          g++ -o talon-os-windows.exe $SRC
 
       - name: Build (macOS)
         if: runner.os == 'macOS'
-        run: g++ -o talon-os-macos main.cpp driver_registry.cpp kernel/kernel.c filesystem/proc/cpuinfo.cpp filesystem/proc/gpuinfo.cpp uefi.cpp logo.cpp bootloader.cpp
+        run: |
+          SRC=$(sed -n '3p' quick.sh | sed 's/^g++ -o [^ ]* //')
+          g++ -o talon-os-macos $SRC
 
       - uses: actions/upload-artifact@v4
         with:
