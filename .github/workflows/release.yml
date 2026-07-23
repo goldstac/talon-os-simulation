@@ -56,7 +56,7 @@ jobs:
       - name: Build (Windows)
         if: runner.os == 'Windows'
         run: |
-          $CMD = Get-Content quick.sh -Index 2
+          $CMD = (Get-Content quick.sh)[2]
           $CMD = $CMD -replace 'main\.exe', 'talon-os-windows.exe'
           Invoke-Expression $CMD
 
