@@ -49,17 +49,17 @@ int main() {
     } else if (shell == "") {
       continue;
     } else if (shell == "whoami") {
-      std::cout << "root";
+      std::cout << "root\n";
     }
     //
     else if (shell == "pacman -Syu") {
-      std::cout << "Updating Core  ###";
-      std::cout << "Updating Extra ###";
-      std::cout << "";
+      std::cout << "Updating Core  ###\n";
+      std::cout << "Updating Extra ###\n";
+      std::cout << "Updating Multilib ###\n";
       std::cout << "";
     } else if (shell == "free -h") {
       std::cout << "Memory| Free | Using\n";
-      std::cout << "------|------|-------";
+      std::cout << "------|------|-------\n";
       std::cout << "96 GB | 93GB | 3 GB  \n";
       continue;
     } else if (shell == "df -h") {
