@@ -22,8 +22,8 @@ std::map<std::string, std::string> locate_bin = {
 int main() {
   bootloader();
   std::cin.ignore();
-  int first_number;
-  int second_number;
+  int first_number = 0;
+  int second_number = 0;
   std::string shell;
   std::string iwd;
   std::cout << "Welcome To Talon Linux\n";
