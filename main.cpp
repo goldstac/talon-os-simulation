@@ -112,8 +112,8 @@ int main() {
       std::cin >> first_number;
       std::cin.ignore();
       std::cout << "[Calculator] Enter Second Number >> ";
-      std::cin.ignore();
-      std::cout << "Answer ==" << first_number + second_number << "\n";
+      std::cin >> second_number;
+      std::cout << "Answer == " << first_number + second_number << "\n";
       std::cin.ignore();
       continue;
     } else {
