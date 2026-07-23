@@ -112,9 +112,9 @@ int main() {
       std::cin >> first_number;
       std::cin.ignore();
       std::cout << "[Calculator] Enter Second Number >> ";
-      std::cin >> second_number;
       std::cin.ignore();
-      std::cout << "[Calculator] Result: " << first_number + second_number << "\n";
+      std::cout << "Answer ==" << first_number + second_number << "\n";
+      std::cin.ignore();
       continue;
     } else {
       std::cout << "Command Not Found\n";
