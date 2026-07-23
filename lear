@@ -6,10 +6,8 @@
 #include "logo.h"
 #include "uefi.h"
 #include <cstdlib>
-#include <fstream>
 #include <iostream>
 #include <map>
-#include <sstream>
 #include <string>
 std::map<std::string, std::string> kernel_memory_locate = {
     {"wlan", "0Xffffffff81812"},
