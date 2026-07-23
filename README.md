@@ -88,6 +88,35 @@ g++ -o main.exe main.cpp kernel/kernel.c driver_registry.cpp filesystem/proc/cpu
 └── .github/workflows/    # GitHub Actions CI
 ```
 
+## Releases
+
+This project uses **tagged releases** with pre-built binaries across Linux, Windows, and macOS.
+
+### Creating a release
+
+```bash
+git push origin main                  # push your changes
+git tag v0.1.0                        # tag the version
+git push origin v0.1.0                # triggers the release workflow
+```
+
+Tags containing `alpha`, `beta`, `rc`, `preview`, `dev`, or `test` are automatically marked as **pre-releases** on GitHub.
+
+Each release includes:
+- `talon-os-linux` — Linux ELF binary
+- `talon-os-windows.exe` — Windows PE binary
+- `talon-os-macos` — macOS binary
+
+### Updating the changelog
+
+Use opencode to auto-generate the changelog for a new version:
+
+```
+opencode update changelog
+```
+
+This reads recent commits, categorizes them, and updates `CHANGELOG.md`.
+
 ## License
 
 AGPL-3.0

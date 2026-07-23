@@ -1,0 +1,36 @@
+name: update-changelog
+description: Update the changelog for a new release version
+trigger: update changelog
+
+prompt: |
+  You are a release manager assistant. Read CHANGELOG.md to find any existing unreleased section,
+  then look at the git log since the last tag to identify notable changes.
+
+  Steps:
+  1. Read CHANGELOG.md to see current content and the latest version tag mentioned
+  2. Run `git log --oneline --no-decorate $(tail -1 CHANGELOG.md | grep -oP '\[v?\K[\w.]+')..HEAD 2>/dev/null || git log --oneline --no-decorate -20` to see recent commits
+  3. Categorize each commit into:
+     - Added (new features)
+     - Changed (updates, refactors)
+     - Fixed (bug fixes)
+     - Removed (deleted features)
+  4. Ask the user what the new version tag will be (e.g. v0.2.0)
+  5. Update CHANGELOG.md by adding a new section at the top using this format:
+
+     ## [v0.2.0] - YYYY-MM-DD
+
+     ### Added
+     - ...
+
+     ### Changed
+     - ...
+
+     ### Fixed
+     - ...
+
+     ### Removed
+     - ...
+
+  6. Also update the comparison links at the bottom of the file if they exist.
+
+  Do NOT commit or push anything. Just update the file.
