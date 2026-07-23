@@ -22,24 +22,18 @@ A user-space simulation of the Talon Linux operating system environment, written
 - **Logo** (`logo.cpp`) — ASCII art "Talon Linux" branding displayed by `penguinfetch`
 - **Arch UEFI** (`arch-uefi/`) — Experimental Arch Linux UEFI simulation (not a real bootloader). Changing boot order in UEFI will boot into this. Unofficial, may or may not be included in the final release.
 
-## Build & Run
+## Download
 
-### Linux / macOS
-```sh
-# Quick build and run
-g++ -o main main.cpp driver_registry.cpp kernel/kernel.c filesystem/proc/cpuinfo.cpp filesystem/proc/gpuinfo.cpp uefi.cpp logo.cpp && ./main
-```
+> **Pre-built binaries are available for every release.** No need to compile.
 
-### Windows
-```bat
-g++ -o main.exe main.cpp kernel/kernel.c driver_registry.cpp filesystem/proc/cpuinfo.cpp && main.exe
-```
+[**Download the latest release**](https://github.com/goldstac/talon-os-simulation/releases)
 
-### Scripts
-- `quick.sh` — one-liner build + run
-- `run.sh` — full build with additional utilities
-- `run.bat` — Windows build + run
-- `compile.sh` — compile individual utility objects
+Each release includes:
+- `talon-os-linux` — Linux
+- `talon-os-windows.exe` — Windows
+- `talon-os-macos` — macOS
+
+---
 
 ## Project Structure
 
