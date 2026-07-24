@@ -19,7 +19,7 @@ const std::string PLATFORM = "macos";
 #else
 const std::string PLATFORM = "linux";
 #endif
-const std::string VERSION = "1.0.4";
+const std::string VERSION = "1.0.5";
 
 std::string read_file(const std::string &filepath) {
   std::ifstream file(filepath);
@@ -49,7 +49,7 @@ int main() {
   std::cout << "Welcome To Talon Linux\n";
   register_device("keyboard_driver");
   while (true) {
-    std::cout << "[root@talon] >> [#] ";
+    std::cout << "[root@talon] >> [%] ";
     std::getline(std::cin, shell);
     if (shell == "exit" || shell == "shutdown") {
       std::cout << "exiting\n";
@@ -104,7 +104,7 @@ int main() {
 
     } else if (shell == "cat proc/cpuinfo") {
       cpuinfo();
-    } else if (shell == "$SHELL") {
+    } else if (shell == "echo $SHELL") {
       std::cout << "Penguin\n";
     } else if (shell == "clear") {
 #ifdef _WIN32
@@ -166,7 +166,10 @@ int main() {
           dl += PLATFORM + " -o talon-os-" + PLATFORM + ".new";
           std::system(dl.c_str());
 #ifndef _WIN32
-          std::system(("chmod +x talon-os-" + PLATFORM + ".new && mv talon-os-" + PLATFORM + ".new talon-os-" + PLATFORM).c_str());
+          std::system(("chmod +x talon-os-" + PLATFORM +
+                       ".new && mv talon-os-" + PLATFORM + ".new talon-os-" +
+                       PLATFORM)
+                          .c_str());
           std::cout << "Update applied. Type 'exit' and run ./talon-os-"
                     << PLATFORM << " again.\n";
 #else
