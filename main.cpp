@@ -19,7 +19,7 @@ const std::string PLATFORM = "macos";
 #else
 const std::string PLATFORM = "linux";
 #endif
-const std::string VERSION = "1.0.2";
+const std::string VERSION = "1.0.3";
 
 std::string read_file(const std::string &filepath) {
   std::ifstream file(filepath);
@@ -144,28 +144,38 @@ int main() {
       continue;
     } else if (shell == "update") {
       std::cout << "Checking for updates...\n";
-      std::string api_cmd = "curl -s https://api.github.com/repos/goldstac/talon-os-simulation/releases/latest | grep 'tag_name' | cut -d'\"' -f4";
-      FILE* fp = popen(api_cmd.c_str(), "r");
+      std::string api_cmd =
+          "curl -s "
+          "https://api.github.com/repos/goldstac/talon-os-simulation/releases/"
+          "latest | grep 'tag_name' | cut -d'\"' -f4";
+      FILE *fp = popen(api_cmd.c_str(), "r");
       char buf[64];
       if (fp && fgets(buf, sizeof(buf), fp)) {
         pclose(fp);
         std::string latest(buf);
-        if (!latest.empty() && latest.back() == '\n') latest.pop_back();
+        if (!latest.empty() && latest.back() == '\n')
+          latest.pop_back();
         if (latest == "v" + VERSION) {
           std::cout << "Already up to date (v" << VERSION << ")\n";
         } else {
-          std::cout << "Updating from v" << VERSION << " to " << latest << "...\n";
-          std::string dl = "curl -L https://github.com/goldstac/talon-os-simulation/releases/latest/download/talon-os-";
+          std::cout << "Updating from v" << VERSION << " to " << latest
+                    << "...\n";
+          std::string dl = "curl -L "
+                           "https://github.com/goldstac/talon-os-simulation/"
+                           "releases/latest/download/talon-os-";
           dl += PLATFORM + " -o talon-os-" + PLATFORM + ".new";
           std::system(dl.c_str());
 #ifndef _WIN32
           std::system(("chmod +x talon-os-" + PLATFORM + ".new").c_str());
 #endif
-          std::cout << "Update downloaded. Restart Talon OS to use the new version.\n";
+          std::cout << "Update downloaded. Restart Talon OS to use the new "
+                       "version.\n";
         }
       } else {
-        if (fp) pclose(fp);
-        std::cout << "Failed to check for updates. Check your internet connection.\n";
+        if (fp)
+          pclose(fp);
+        std::cout
+            << "Failed to check for updates. Check your internet connection.\n";
       }
       continue;
     } else if (shell == "--version") {
