@@ -11,6 +11,16 @@
 #include <map>
 #include <sstream>
 #include <string>
+std::string read_file(const std::string &filepath) {
+  std::ifstream file(filepath);
+  std::stringstream buffer;
+  buffer << file.rdbuf();
+  return buffer.str();
+}
+void write_file(const std::string &filepath, const std::string &content) {
+  std::ofstream file(filepath, std::ios::app);
+  file << content << '\n';
+}
 std::map<std::string, std::string> kernel_memory_locate = {
     {"wlan", "0Xffffffff81812"},
 };
@@ -122,6 +132,8 @@ int main() {
       }
       std::cin.ignore();
       continue;
+    } else if (shell == "--version") {
+      std::cout << "Talon Linux V1.0.0 Stable Release\n";
     } else {
       std::cout << "Command Not Found\n";
       continue;
