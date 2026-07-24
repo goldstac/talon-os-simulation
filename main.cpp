@@ -166,13 +166,9 @@ int main() {
           dl += PLATFORM + " -o talon-os-" + PLATFORM + ".new";
           std::system(dl.c_str());
 #ifndef _WIN32
-          std::system(("chmod +x talon-os-" + PLATFORM + ".new").c_str());
-          std::system(("mv talon-os-" + PLATFORM + " talon-os-" + PLATFORM +
-                       ".old 2>/dev/null; mv talon-os-" + PLATFORM +
-                       ".new talon-os-" + PLATFORM)
-                          .c_str());
+          std::system(("chmod +x talon-os-" + PLATFORM + ".new && mv talon-os-" + PLATFORM + ".new talon-os-" + PLATFORM).c_str());
           std::cout << "Update applied. Type 'exit' and run ./talon-os-"
-                    << PLATFORM << " again to use the new version.\n";
+                    << PLATFORM << " again.\n";
 #else
           std::cout << "Update downloaded to talon-os-" << PLATFORM
                     << ".new. Restart to use the new version.\n";
