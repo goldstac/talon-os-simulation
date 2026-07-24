@@ -19,7 +19,7 @@ const std::string PLATFORM = "macos";
 #else
 const std::string PLATFORM = "linux";
 #endif
-const std::string VERSION = "1.0.1";
+const std::string VERSION = "1.0.2";
 
 std::string read_file(const std::string &filepath) {
   std::ifstream file(filepath);
@@ -144,7 +144,7 @@ int main() {
       continue;
     } else if (shell == "update") {
       std::cout << "Checking for updates...\n";
-      std::string api_cmd = "curl -s https://api.github.com/repos/goldstac/talon-os-simulation/releases/latest | grep -o '\"tag_name\":\"[^\"]*\"' | grep -o '[^\"]*$'";
+      std::string api_cmd = "curl -s https://api.github.com/repos/goldstac/talon-os-simulation/releases/latest | grep 'tag_name' | cut -d'\"' -f4";
       FILE* fp = popen(api_cmd.c_str(), "r");
       char buf[64];
       if (fp && fgets(buf, sizeof(buf), fp)) {
