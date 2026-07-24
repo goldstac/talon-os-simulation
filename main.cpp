@@ -111,10 +111,15 @@ int main() {
       std::cout << "-----------------------\n";
       std::cout << "[Calculator] Enter First Number >> ";
       std::cin >> first_number;
-      std::cin.ignore();
       std::cout << "[Calculator] Enter Second Number >> ";
       std::cin >> second_number;
-      std::cout << "Answer == " << first_number + second_number << "\n";
+      if (std::cin.fail()) {
+        std::cin.clear();
+        std::cin.ignore(1000, '\n');
+        std::cout << "Invalid input\n";
+      } else {
+        std::cout << "Answer == " << first_number + second_number << "\n";
+      }
       std::cin.ignore();
       continue;
     } else {
