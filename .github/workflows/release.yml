@@ -51,7 +51,7 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           SRC=$(sed -n '3p' quick.sh | sed 's/^g++ -o [^ ]* //')
-          g++ -pthread -o talon-os-linux $SRC
+          g++ -no-pie -o talon-os-linux $SRC
 
       - name: Build (Windows)
         if: runner.os == 'Windows'
