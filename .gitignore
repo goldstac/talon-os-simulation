@@ -2,3 +2,5 @@
 system/free-h
 *.exe
 /.vscode
+talon-os-*
+*.new
