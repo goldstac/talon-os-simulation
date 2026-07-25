@@ -4,3 +4,4 @@ system/free-h
 /.vscode
 talon-os-*
 *.new
+kernel/log_kernel
