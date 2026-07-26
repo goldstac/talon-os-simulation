@@ -8,7 +8,7 @@ A user-space simulation of the Talon Linux operating system environment, written
 
 ## Features
 
-- **Shell** (`main.cpp`) — A `[root@talon]` command-line REPL supporting commands like `reboot uefi`, `penguinfetch`, `cat proc/cpuinfo`, `cat proc/gpuinfo`, `pacman -Syu`, `free -h`, `df -h`, `iwctl`, `root locate`, `which`, `whoami`, and more
+- **Shell** (`main.cpp`) — A `root@talon [Desktop] >> [%]` command-line REPL supporting commands like `reboot uefi`, `penguinfetch`, `cat proc/cpuinfo`, `cat proc/gpuinfo`, `pacman -Syu`, `free -h`, `df -h`, `iwctl`, `root locate`, `which`, `whoami`, `ls`, `cat`, `touch`, `update`, `--version`, and more
 - **Bootloader** (`bootloader.cpp`) — Simulated Talon Bootloader with boot option selection
 - **Kernel** (`kernel/kernel.c`) — Simulated Linux kernel boot sequence with driver-loading messages and cross-platform sleep
 - **Initramfs** (`initramfs.cpp`) — Simulated initial RAM filesystem stage
@@ -61,6 +61,10 @@ Each release includes:
 │   │   └── zsh           # Placeholder /bin/zsh
 │   ├── boot/flash/
 │   │   └── flash.cfg     # Flash boot configuration
+│   ├── home/
+│   │   └── admin/
+│   │       ├── .cache/   # Cache directory (used by ls)
+│   │       └── Desktop/  # Default workspace (user boots here)
 │   └── proc/
 │       ├── cpuinfo.cpp   # Simulated /proc/cpuinfo
 │       └── gpuinfo.cpp   # Simulated /proc/gpuinfo
@@ -85,6 +89,12 @@ Each release includes:
 ## Releases
 
 This project uses **tagged releases** with pre-built binaries across Linux, Windows, and macOS.
+
+The shell includes an `update` command that checks the GitHub API for the latest release and downloads it automatically.
+
+### Current Version
+
+`v1.0.6` — as reported by `--version` in the shell.
 
 ### Creating a release
 
