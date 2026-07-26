@@ -11,7 +11,9 @@
 #include <map>
 #include <sstream>
 #include <string>
-
+std::string home_dir = "filesystem/home/admin/";
+std::string desktop_dir = "filesystem/home/admin/Desktop/";
+std::string cache_dir = "filesystem/home/admin/.cache/";
 #ifdef _WIN32
 const std::string PLATFORM = "windows.exe";
 #elif __APPLE__
@@ -49,7 +51,7 @@ int main() {
   std::cout << "Welcome To Talon Linux\n";
   register_device("keyboard_driver");
   while (true) {
-    std::cout << "root@talon [~/] >> [%]\n> ";
+    std::cout << "root@talon [Desktop] >> [%]\n> ";
     std::getline(std::cin, shell);
     if (shell == "exit" || shell == "shutdown") {
       std::cout << "exiting\n";
@@ -184,6 +186,27 @@ int main() {
             << "Failed to check for updates. Check your internet connection.\n";
       }
       continue;
+    } else if (shell.substr(0, 5) == "touch") {
+      if (shell.length() > 6) {
+        std::string touch_strip = shell.substr(6);
+        std::string touch_command = "touch " + desktop_dir + touch_strip;
+        std::system(touch_command.c_str());
+      } else {
+        std::cout << "[touch] >> add the file name dude\n";
+      }
+    } else if (shell.substr(0, 3) == "cat") {
+      if (shell.length() > 4) {
+        std::string cat_strip = shell.substr(4);
+        std::string cat_target = desktop_dir + cat_strip;
+        std::string cat_output = read_file(cat_target);
+        std::cout << cat_output << "\n";
+      } else {
+        std::cout << "add a space lol";
+      }
+    } else if (shell.substr(0, 2) == "ls") {
+      std::system("ls filesystem/home/admin/Desktop> filesystem/home/admin/.cache/ls.txt");
+      std::string ls_output = read_file("filesystem/home/admin/.cache/ls.txt");
+      std::cout << ls_output << "\n";
     } else if (shell == "--version") {
       std::cout << "Talon Linux v" << VERSION << "\n";
     } else {
