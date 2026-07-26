@@ -11,6 +11,8 @@
 #include <map>
 #include <sstream>
 #include <string>
+#include <filesystem>
+namespace fs = std::filesystem;
 std::string home_dir = "filesystem/home/admin/";
 std::string desktop_dir = "filesystem/home/admin/Desktop/";
 std::string cache_dir = "filesystem/home/admin/.cache/";
@@ -21,7 +23,7 @@ const std::string PLATFORM = "macos";
 #else
 const std::string PLATFORM = "linux";
 #endif
-const std::string VERSION = "1.0.6";
+const std::string VERSION = "1.0.7";
 
 std::string read_file(const std::string &filepath) {
   std::ifstream file(filepath);
@@ -40,9 +42,13 @@ std::map<std::string, std::string> locate_bin = {
     {"penguinfetch", "/bin/penguinfetch"},
     {"bash", "/bin/bash"},
     {"zsh", "/bin/zsh"},
+    {"calculator","/bin/calculator"}
 };
 int main() {
   bootloader();
+  if (fs::exists(home_dir) && fs::is_directory(home_dir)){
+    
+  }
   std::cin.ignore();
   int first_number = 0;
   int second_number = 0;

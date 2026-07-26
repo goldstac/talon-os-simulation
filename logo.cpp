@@ -1,7 +1,8 @@
 #include "logo.h"
 #include <iostream>
 
-void printLogo() {
+void printLogo(){
+  
   const std::string R = "\033[0m";
   const std::string G1 = "\033[1;33m";
   const std::string G2 = "\033[0;33m";
@@ -26,5 +27,5 @@ void printLogo() {
   std::cout << R1 << "        .+*#%@@@@@@@@@@@@@@@%#*+.\n";
   std::cout << R2 << "          .+*#%@@@@@@@@@@@%#*+.\n";
   std::cout << R2 << "             .+*#%@@@@@%#*+.\n";
-  std::cout << R << W << "             Talon Linux v1.0.6 (Stable)\n" << R;
+  std::cout << R << W << "             Talon Linux v1.0.7 (Beta)\n" << R;
 }
