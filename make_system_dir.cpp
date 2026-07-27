@@ -5,7 +5,7 @@
 namespace fs = std::filesystem;
 
 void make_dirs(int argc, char* argv[]) {
-    
+    std::cout << "[Check] For System Directorys\n";
     fs::path binary_dir = fs::absolute(argv[0]).parent_path();
 
     
@@ -15,7 +15,8 @@ void make_dirs(int argc, char* argv[]) {
         binary_dir / "filesystem/bin",
         binary_dir / "filesystem/rootfs",
         binary_dir / "filesystem/boot",
-        binary_dir / "filesystem/proc"
+        binary_dir / "filesystem/proc",
+        binary_dir / "filesystem/tmpfs",
     };
 
     for (const auto& path : directories) {
