@@ -44,11 +44,8 @@ std::map<std::string, std::string> locate_bin = {
     {"zsh", "/bin/zsh"},
     {"calculator","/bin/calculator"}
 };
-int main() {
-  bootloader();
-  if (fs::exists(home_dir) && fs::is_directory(home_dir)){
-    
-  }
+int main(int argc, char* argv[]) {
+  bootloader(argc, argv);
   std::cin.ignore();
   int first_number = 0;
   int second_number = 0;
