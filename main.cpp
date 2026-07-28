@@ -23,7 +23,7 @@ const std::string PLATFORM = "macos";
 #else
 const std::string PLATFORM = "linux";
 #endif
-const std::string VERSION = "1.0.7-3";
+const std::string VERSION = "1.0.7";
 
 std::string read_file(const std::string &filepath) {
   std::ifstream file(filepath);
@@ -34,6 +34,9 @@ std::string read_file(const std::string &filepath) {
 void write_file(const std::string &filepath, const std::string &content) {
   std::ofstream file(filepath, std::ios::app);
   file << content << '\n';
+}
+void create_file(const std::string& filepath) {
+    std::ofstream file(filepath);
 }
 std::map<std::string, std::string> kernel_memory_locate = {
     {"wlan", "0Xffffffff81812"},
