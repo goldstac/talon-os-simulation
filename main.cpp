@@ -57,9 +57,9 @@ int main(int argc, char* argv[]) {
   std::cout << "Welcome To Talon Linux\n";
   register_device("keyboard_driver");
   while (true) {
-    std::cout << "root@talon [Desktop] >> [%]\n> ";
+    std::cout << "root@talon [Desktop] >> [%]\n--> ";
     std::getline(std::cin, shell);
-    if (shell == "exit" || shell == "shutdown") {
+    if (shell == "exit" || shell == "shutdown" || shell == "shutdown now") {
       std::cout << "exiting\n";
       break;
 
@@ -124,8 +124,7 @@ int main(int argc, char* argv[]) {
       std::cout << "/bin/penguin\n";
     } else if (shell == "chsh -s $(which zsh)" ||
                shell == "chsh -s $(which bash)") {
-      std::cout << "[Talon] No\n";
-      std::cout << "[Kernel] No\n";
+                std::cout << "[System] --> No\n";     
     } else if (shell == "cat proc/gpuinfo") {
       gpuinfo();
     } else if (shell == "reboot uefi") {
@@ -226,4 +225,4 @@ int main(int argc, char* argv[]) {
       continue;
     }
   }
-}
+} 
