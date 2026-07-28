@@ -213,7 +213,13 @@ int main(int argc, char* argv[]) {
       std::system("ls filesystem/home/admin/Desktop> filesystem/home/admin/.cache/ls.txt");
       std::string ls_output = read_file("filesystem/home/admin/.cache/ls.txt");
       std::cout << ls_output << "\n";
-    } else if (shell == "--version") {
+    } 
+    else if (shell.substr(0,4) == "echo"){
+    if (shell.length() > 5){
+      std::cout << shell.substr(5) << "\n";
+    }
+    }
+    else if (shell == "--version") {
       std::cout << "Talon Linux v" << VERSION << "\n";
     } else {
       std::cout << "Command Not Found\n";
