@@ -151,6 +151,35 @@ int main(int argc, char* argv[]) {
       continue;
     } else if (shell == "update") {
       std::cout << "Checking for updates...\n";
+      std::string latest;
+#ifdef _WIN32
+      {
+        std::string api_cmd =
+            "curl -s "
+            "https://api.github.com/repos/goldstac/talon-os-simulation/releases/"
+            "latest";
+        FILE *fp = popen(api_cmd.c_str(), "r");
+        if (fp) {
+          std::string response;
+          char buf[256];
+          while (fgets(buf, sizeof(buf), fp)) {
+            response += buf;
+          }
+          pclose(fp);
+          std::string key = "\"tag_name\"";
+          size_t pos = response.find(key);
+          if (pos != std::string::npos) {
+            pos = response.find('"', pos + key.length() + 1);
+            if (pos != std::string::npos) {
+              size_t end = response.find('"', pos + 1);
+              if (end != std::string::npos) {
+                latest = response.substr(pos + 1, end - pos - 1);
+              }
+            }
+          }
+        }
+      }
+#else
       std::string api_cmd =
           "curl -s "
           "https://api.github.com/repos/goldstac/talon-os-simulation/releases/"
@@ -159,34 +188,36 @@ int main(int argc, char* argv[]) {
       char buf[64];
       if (fp && fgets(buf, sizeof(buf), fp)) {
         pclose(fp);
-        std::string latest(buf);
+        latest = std::string(buf);
         if (!latest.empty() && latest.back() == '\n')
           latest.pop_back();
-        if (latest == "v" + VERSION) {
-          std::cout << "Already up to date (v" << VERSION << ")\n";
-        } else {
-          std::cout << "Updating from v" << VERSION << " to " << latest
-                    << "...\n";
-          std::string dl = "curl -L "
-                           "https://github.com/goldstac/talon-os-simulation/"
-                           "releases/latest/download/talon-os-";
-          dl += PLATFORM + " -o talon-os-" + PLATFORM + ".new";
-          std::system(dl.c_str());
-#ifndef _WIN32
-          std::system(("chmod +x talon-os-" + PLATFORM +
-                       ".new && mv talon-os-" + PLATFORM + ".new talon-os-" +
-                       PLATFORM)
-                          .c_str());
-          std::cout << "Update applied. Type 'exit' and run ./talon-os-"
-                    << PLATFORM << " again.\n";
-#else
-          std::cout << "Update downloaded to talon-os-" << PLATFORM
-                    << ".new. Restart to use the new version.\n";
-#endif
-        }
       } else {
         if (fp)
           pclose(fp);
+      }
+#endif
+      if (latest == "v" + VERSION) {
+        std::cout << "Already up to date (v" << VERSION << ")\n";
+      } else if (!latest.empty()) {
+        std::cout << "Updating from v" << VERSION << " to " << latest
+                  << "...\n";
+        std::string dl = "curl -L "
+                         "https://github.com/goldstac/talon-os-simulation/"
+                         "releases/latest/download/talon-os-";
+        dl += PLATFORM + " -o talon-os-" + PLATFORM + ".new";
+        std::system(dl.c_str());
+#ifndef _WIN32
+        std::system(("chmod +x talon-os-" + PLATFORM +
+                     ".new && mv talon-os-" + PLATFORM + ".new talon-os-" +
+                     PLATFORM)
+                        .c_str());
+        std::cout << "Update applied. Type 'exit' and run ./talon-os-"
+                  << PLATFORM << " again.\n";
+#else
+        std::cout << "Update downloaded to talon-os-" << PLATFORM
+                  << ".new. Restart to use the new version.\n";
+#endif
+      } else {
         std::cout
             << "Failed to check for updates. Check your internet connection.\n";
       }
