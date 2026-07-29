@@ -248,6 +248,12 @@ int main(int argc, char* argv[]) {
     if (shell.length() > 5){
       std::cout << shell.substr(5) << "\n";
     }
+    else{
+      std::cout << "say the text dude\n";
+    }   
+    }
+    else if (shell == "vim") {
+	    std::system("vim filesystem/home/admin/Desktop");
     }
     else if (shell == "--version") {
       std::cout << "Talon Linux v" << VERSION << "\n";
