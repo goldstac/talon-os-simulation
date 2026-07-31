@@ -24,7 +24,7 @@ const std::string PLATFORM = "macos";
 #else
 const std::string PLATFORM = "linux";
 #endif
-const std::string VERSION = "1.0.7";  
+const std::string VERSION = "1.0.8";  
 std::string read_file(const std::string &filepath) {
   std::ifstream file(filepath);
   std::stringstream buffer;
@@ -297,7 +297,7 @@ int main(int argc, char* argv[]) {
     else if (shell == "claude"){
       int run_claude_code = std::system("claude");
       if (run_claude_code !=0){
-        std::cout << "Something Went Wrong";
+        std::cout << "..";
       }
       else{
         // all good
