@@ -16,6 +16,7 @@ namespace fs = std::filesystem;
 std::string home_dir = "filesystem/home/admin/";
 std::string desktop_dir = "filesystem/home/admin/Desktop/";
 std::string cache_dir = "filesystem/home/admin/.cache/";
+std::string config_dir = "filesystem/home/admin/.config/";
 #ifdef _WIN32
 const std::string PLATFORM = "windows.exe";
 #elif __APPLE__
@@ -23,8 +24,7 @@ const std::string PLATFORM = "macos";
 #else
 const std::string PLATFORM = "linux";
 #endif
-const std::string VERSION = "1.0.7";
-
+const std::string VERSION = "1.0.7";  
 std::string read_file(const std::string &filepath) {
   std::ifstream file(filepath);
   std::stringstream buffer;
@@ -54,6 +54,9 @@ int main(int argc, char* argv[]) {
   int second_number = 0;
   std::string shell;
   std::string iwd;
+  std::string command;
+  std::string argument;
+  std::string browser = read_file("filesystem/home/admin/.config/browser/browser.cfg");
   std::cout << "Welcome To Talon Linux\n";
   register_device("keyboard_driver");
   while (true) {
@@ -136,9 +139,9 @@ int main(int argc, char* argv[]) {
       std::cout << "-----------------------\n";
       std::cout << "   Talon Calculator\n";
       std::cout << "-----------------------\n";
-      std::cout << "[Calculator] Enter First Number >> ";
+      std::cout << "[Calculator] Enter First Number --> ";
       std::cin >> first_number;
-      std::cout << "[Calculator] Enter Second Number >> ";
+      std::cout << "[Calculator] Enter Second Number --> ";
       std::cin >> second_number;
       if (std::cin.fail()) {
         std::cin.clear();
@@ -237,7 +240,7 @@ int main(int argc, char* argv[]) {
         std::string cat_output = read_file(cat_target);
         std::cout << cat_output << "\n";
       } else {
-        std::cout << "add a space lol";
+        std::cout << "add a space lol\n";
       }
     } else if (shell.substr(0, 2) == "ls") {
       std::system("ls filesystem/home/admin/Desktop> filesystem/home/admin/.cache/ls.txt");
@@ -253,7 +256,66 @@ int main(int argc, char* argv[]) {
     }   
     }
     else if (shell == "vim") {
-	    std::system("vim filesystem/home/admin/Desktop");
+	    int run_vim = std::system("vim filesystem/home/admin/Desktop");
+      if (run_vim !=0){
+        std::cout << "Something Went Wrong";
+      }
+      else {
+        //all good
+      }
+    }
+    else if (shell == "browser"){
+      	    int run_browser = std::system(browser.c_str());
+            if (run_browser !=0){
+              std::cout << "Add Your Browser in " << config_dir << "browser/browser.cfg \n";
+            }
+            else{
+              //all good
+            }
+    }
+    else if (shell == "browser --print") {
+	    std::cout << browser << "\n";
+    }
+    else if (shell == "nvim"){
+    int run_nvim = std::system("nvim filesystem/home/admin/Desktop");
+    if (run_nvim != 0){
+      std::cout << "Something Went Wrong\n";
+    }
+    else{
+      // all good bro
+    }
+    }
+    else if (shell == "opencode"){
+      int run_opencode = std::system("opencode");
+      if (run_opencode !=0){
+        std::cout << "Something Went Wrong\n";
+      }
+      else{
+        // all good
+      }
+    }
+    else if (shell == "claude"){
+      int run_claude_code = std::system("claude");
+      if (run_claude_code !=0){
+        std::cout << "Something Went Wrong";
+      }
+      else{
+        // all good
+      }
+    }
+    else if (shell == "date"){
+      std::system("date > filesystem/home/admin/.cache/date.txt");
+      std::string read_date = read_file("filesystem/home/admin/.cache/date.txt");
+      std::cout << read_date << "\n";
+    }
+    else if (shell == "code"){
+      int run_vs_code = std::system("code filesystem/home/admin/Desktop");
+      if (run_vs_code !=0){
+        std::cout << "Something Went Wrong\n";
+      }
+      else {
+        // all good bro :)
+      }
     }
     else if (shell == "--version") {
       std::cout << "Talon Linux v" << VERSION << "\n";

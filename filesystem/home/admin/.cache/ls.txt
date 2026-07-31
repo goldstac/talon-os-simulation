@@ -1,4 +1,1 @@
-lol
-more
 test.cpp
-t.t
