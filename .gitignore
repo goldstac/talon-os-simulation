@@ -5,3 +5,4 @@ system/free-h
 talon-os-*
 *.new
 kernel/log_kernel
+filesystem/home/admin/.cache/date.txt
