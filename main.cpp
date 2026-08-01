@@ -47,32 +47,23 @@ std::map<std::string, std::string> locate_bin = {
     {"zsh", "/bin/zsh"},
     {"calculator","/bin/calculator"}
 };
-int main(int argc, char* argv[]) {
-  bootloader(argc, argv);
-  std::cin.ignore();
+bool handle_command(const std::string &shell) {
   int first_number = 0;
   int second_number = 0;
-  std::string shell;
   std::string iwd;
   std::string command;
   std::string argument;
   std::string browser = read_file("filesystem/home/admin/.config/browser/browser.cfg");
-  std::cout << "Welcome To Talon Linux\n";
-  register_device("keyboard_driver");
-  while (true) {
-    std::cout << "root@talon [Desktop] >> [%]\n--> ";
-    std::getline(std::cin, shell);
-    if (shell == "exit" || shell == "shutdown" || shell == "shutdown now") {
-      std::cout << "exiting\n";
-      break;
+  if (shell == "exit" || shell == "shutdown" || shell == "shutdown now") {
+    std::cout << "exiting\n";
+    return false;
 
-    } else if (shell.substr(0, 11) == "root locate") {
+  } else if (shell.substr(0, 11) == "root locate") {
       std::string target = shell.substr(12);
       if (kernel_memory_locate.count(target)) {
         std::cout << "[KERNEL] " << target << " "
                   << kernel_memory_locate[target] << "\n";
       }
-      continue;
     } else if (shell.substr(0, 5) == "which") {
       std::string target_locate_bin = shell.substr(6);
       if (locate_bin.count(target_locate_bin)) {
@@ -80,7 +71,6 @@ int main(int argc, char* argv[]) {
                   << locate_bin[target_locate_bin] << "\n";
       }
     } else if (shell == "") {
-      continue;
     } else if (shell == "whoami") {
       std::cout << "root\n";
     }
@@ -93,14 +83,12 @@ int main(int argc, char* argv[]) {
       std::cout << "Memory| Free | Using\n";
       std::cout << "------|------|-------\n";
       std::cout << "96 GB | 93GB | 3 GB  \n";
-      continue;
     } else if (shell == "df -h") {
       std::cout << "Filesystem |     Path     | Size | Used | Avail \n";
       std::cout << "-----------|--------------|------|------|-------\n";
       std::cout << "ext4       |/dev/nvme0n1p6| 8TB  | 1TB  |  6TB  \n";
       std::cout << "ext4       |/dev/nvme0n1p7| 8TB  | 200G | 7.8TB \n";
       std::cout << "esp        |/dev/nvmeon1p5|  1G  | 221M |  779M \n";
-      continue;
     } else if (shell == "iwctl") {
       while (true) {
         std::cout << "[iwd #]  ";
@@ -134,7 +122,6 @@ int main(int argc, char* argv[]) {
       uefi();
     } else if (shell == "penguinfetch") {
       printLogo();
-      continue;
     } else if (shell == "calculator") {
       std::cout << "-----------------------\n";
       std::cout << "   Talon Calculator\n";
@@ -151,7 +138,6 @@ int main(int argc, char* argv[]) {
         std::cout << "Answer == " << first_number + second_number << "\n";
       }
       std::cin.ignore();
-      continue;
     } else if (shell == "update") {
       std::cout << "Checking for updates...\n";
       std::string latest;
@@ -224,7 +210,6 @@ int main(int argc, char* argv[]) {
         std::cout
             << "Failed to check for updates. Check your internet connection.\n";
       }
-      continue;
     } else if (shell.substr(0, 5) == "touch") {
       if (shell.length() > 6) {
         std::string touch_strip = shell.substr(6);
@@ -321,7 +306,29 @@ int main(int argc, char* argv[]) {
       std::cout << "Talon Linux v" << VERSION << "\n";
     } else {
       std::cout << "Command Not Found\n";
-      continue;
+      return true;
     }
+  return true;
+}
+int main(int argc, char* argv[]) {
+  bootloader(argc, argv);
+  if (argc > 1) {
+    std::string cmd;
+    for (int i = 1; i < argc; ++i) {
+      if (i > 1) cmd += " ";
+      cmd += argv[i];
+    }
+    handle_command(cmd);
+    return 0;
   }
+  std::cin.ignore();
+  std::string shell;
+  std::cout << "Welcome To Talon Linux\n";
+  register_device("keyboard_driver");
+  while (true) {
+    std::cout << "root@talon [Desktop] >> [%]\n--> ";
+    std::getline(std::cin, shell);
+    if (!handle_command(shell)) break;
+  }
+  return 0;
 } 
