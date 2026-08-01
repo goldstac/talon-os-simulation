@@ -1,7 +1,5 @@
 #include "bootloader.h"
 #include "driver_registry.h"
-#include "filesystem/proc/cpuinfo.h"
-#include "filesystem/proc/gpuinfo.h"
 #include "kernel/kernel.h"
 #include "logo.h"
 #include "uefi.h"
@@ -102,8 +100,24 @@ bool handle_command(const std::string &shell) {
       }
 
     } else if (shell == "cat proc/cpuinfo") {
-      cpuinfo();
-    } else if (shell == "echo $SHELL") {
+      std::string cpu_model = "Intel Core Ultra 9 285K";
+    int cpu_cores = 24;
+    int cpu_threads = 24;
+    std::string l2_cache = "40MB";
+    std::string l3_cache = "36MB";
+    std::string max_speed = "5.7 GHz";
+
+    std::cout << "---------------------------------\n";
+    std::cout << "            CPU INFO             \n";
+    std::cout << "---------------------------------\n";
+    std::cout << "Name      | " << cpu_model << "\n";
+    std::cout << "Cores     | " << cpu_cores << "\n";
+    std::cout << "Threads   | " << cpu_threads << "\n";
+    std::cout << "L2 Cache  | " << l2_cache << "\n";
+    std::cout << "L3 Cache  | " << l3_cache << "\n";
+    std::cout << "Max Speed | " << max_speed << "\n"; 
+    } 
+    else if (shell == "echo $SHELL") {
       std::cout << "Penguin\n";
     } else if (shell == "clear") {
 #ifdef _WIN32
@@ -117,8 +131,28 @@ bool handle_command(const std::string &shell) {
                shell == "chsh -s $(which bash)") {
                 std::cout << "[System] --> No\n";     
     } else if (shell == "cat proc/gpuinfo") {
-      gpuinfo();
-    } else if (shell == "reboot uefi") {
+      
+  std::string gpu_name = "Nvidia GeForce RTX 5090";
+  std::string vram = "32 GB";
+  std::string memory_type = "GDDR7";
+  int cuda_cores = 21760;
+  std::string architecture = "Blackwell";
+  std::string interface = "PCIE 5.0 X16 Slot";
+  std::string memory_bus = "512-Bit";
+  std::string bandwith = "1.79 TB/S";
+  std::cout << "----------------------------------------\n";
+  std::cout << "               GPU INFO\n";
+  std::cout << "----------------------------------------\n";
+  std::cout << "Name              |" << gpu_name << "\n";
+  std::cout << "VRAM              |" << vram << "\n";
+  std::cout << "CUDA Cores        |" << cuda_cores << "\n";
+  std::cout << "RAM Type          |" << memory_type << "\n";
+  std::cout << "Architecture      |" << architecture << "\n";
+  std::cout << "Interface         |" << interface << "\n";
+  std::cout << "Memory Bus        |" << memory_bus << "\n";
+  std::cout << "Memory Bandwith   |" << bandwith << "\n";
+    } 
+    else if (shell == "reboot uefi") {
       uefi();
     } else if (shell == "penguinfetch") {
       printLogo();
@@ -240,13 +274,13 @@ bool handle_command(const std::string &shell) {
       std::cout << "say the text dude\n";
     }   
     }
-    else if (shell == "vim") {
-	    int run_vim = std::system("vim filesystem/home/admin/Desktop");
-      if (run_vim !=0){
-        std::cout << "Something Went Wrong";
+    else if (shell.substr(0,3) == "vim") {
+      if (shell.length() > 4){
+      std::string vim_plus_path = "vim filesystem/home/admin/Desktop/" + shell.substr(4);
+      std::system(vim_plus_path.c_str());   
       }
-      else {
-        //all good
+      else{
+        std::system("vim filesystem/home/admin/Desktop");
       }
     }
     else if (shell == "browser"){
