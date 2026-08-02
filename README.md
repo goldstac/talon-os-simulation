@@ -1,4 +1,5 @@
-# Talon OS Simulation
+# THIS PROJECT IS DISCONTINUED BUT DONT WORRY WE ARE REBUILDING IT AT https://github.com/goldstac/talon-apex-simulation
+![NEW REPO](https://github.com/goldstac/talon-apex-simulation)
 
 ![penguinfetch](penguinfetch.png)
 
